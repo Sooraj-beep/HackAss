@@ -27,12 +27,12 @@ export default function DynamicList(list2, {childToParent}) {
     const [selectedIndex, setSelectedIndex] = React.useState('');
     const handleListItemClick = (event, index) => {
       setSelectedIndex(index);
+      list2.childToParent(index);
       setOpen(true);
     };
 
     const handleClose = (event) => {
       setOpen(false);
-      list2.childToParent(index);
     };
     //const list2 = ["ash","vyome","grab"]; 
     return (
