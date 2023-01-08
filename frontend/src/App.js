@@ -16,9 +16,7 @@ function App() {
     setExperience(event);
     
     console.log(experience);
-    
-    console.log(numUsers);
-  };
+    };
   const childToParent2 = (event) => {
     setnumIdeas(event);
     console.log(numIdeas);
