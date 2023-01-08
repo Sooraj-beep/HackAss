@@ -51,15 +51,18 @@ function App() {
     console.log(theme);
   }
 
-  const param = {
-    totalPeople: 2,
-    languages: "Java, C++",
-    experience: "2-4",
-    totalIdeas: 4,
-    duration: "48hr",
-    theme: "webapp"
+  function Generate(){
+    const param = {
+      totalPeople: numUsers,
+      languages: languageFamiliarity,
+      experience: experience,
+      totalIdeas: numIdeas,
+      duration: duration,
+      theme: theme
+    }
+    const prompt = GeneratePrompt(param);
+    console.log(prompt);
   }
-  //GeneratePrompt(param);
   return (
     <div className="App">
       <header className="App-header">
@@ -83,7 +86,7 @@ function App() {
       <div className='Num-Users'>
       <NumberOfIdeas childToParent = {childToParent2}/>
       </div>
-      <Button variant="contained">Generate Ideas</Button>
+      <Button variant="contained" onClick={Generate}>Generate Ideas</Button>
     </div>
   );
 }
