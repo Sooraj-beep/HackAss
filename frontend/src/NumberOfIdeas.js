@@ -5,32 +5,34 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function Experience() {
-  const [experience, setExperience] = React.useState('');
+export default function NumberOfIdeas() {
+  const [numIdeas, setnumIdeas] = React.useState('');
 
   const handleChange = (event) => {
-    setExperience(event.target.value);
+    setnumIdeas(event.target.value);
   };
 
   return (
     <div>
       <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">Experience</InputLabel>
+        <InputLabel id="demo-simple-select-helper-label">Ideas</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
-          value={experience}
-          label="Experience"
+          value={numIdeas}
+          label="numIdeas"
           onChange={handleChange}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={"1"}>0-1</MenuItem>
-          <MenuItem value={"2"}>1-2</MenuItem>
-          <MenuItem value={"3+"}>3+</MenuItem>
+          <MenuItem value={1}>1</MenuItem>
+          <MenuItem value={2}>2</MenuItem>
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={4}>4</MenuItem>
+          <MenuItem value={5}>5</MenuItem>s
         </Select>
-        <FormHelperText>years of coding experience</FormHelperText>
+        <FormHelperText>number of ideas</FormHelperText>
       </FormControl>
     </div>
   );

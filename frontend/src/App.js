@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import Num_members from './NumberOfUsers';
 import Experience from './Experience';
+import NumberOfIdeas from './NumberOfIdeas';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       </div>
       <div className='Num-Users'>
       <Experience/>
+      </div>
+      <div className='Num-Users'>
+      <NumberOfIdeas/>
       </div>
     </div>
   );
