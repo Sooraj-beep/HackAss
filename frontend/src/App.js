@@ -13,11 +13,21 @@ function App() {
   const[duration, setDuration] = useState('');
   const[theme, setTheme] = useState('');
 
-  const childToParent = (event) => {
+  const childToParent1 = (event) => {
     setLanguageFamiliarity(event);
-    setDuration(event);
-    setTheme(event);
+    console.log(languageFamiliarity);
   }
+
+  const childToParent2 = (event) => {
+    setDuration(event);
+    console.log(duration);
+  }
+
+  const childToParent3 = (event) => {
+    setTheme(event);
+    console.log(theme);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -42,13 +52,13 @@ function App() {
       <Header/>
       </header>
       <div className="Lang-familiarity">
-      <LanguageFamiliarityInput/>
+      <LanguageFamiliarityInput childToParent={childToParent1}/>
       </div>
       <div className="Duration">
-      <DurationInput/>
+      <DurationInput childToParent={childToParent2}/>
       </div>
       <div className="Theme">
-      <ThemeInput/>
+      <ThemeInput childToParent={childToParent3}/>
       </div>
     </div>
   );
