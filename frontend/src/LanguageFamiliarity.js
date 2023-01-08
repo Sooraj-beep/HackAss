@@ -5,12 +5,13 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 //import { useHistory } from 'react-router-dom';
 
-export default function LanguageFamiliarityInput() {
+export default function LanguageFamiliarityInput({childToParent}) {
     const [familiarity, setFamiliarity] = useState('');
     //const history = useHistory();
     
     const handleChange = (event) => {
         setFamiliarity(event.target.value);
+        childToParent(event.target.value);
     };
     
     const handleSubmit = (event) => {
