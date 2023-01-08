@@ -7,6 +7,8 @@ import { useState } from 'react';
 import LanguageFamiliarityInput from './LanguageFamiliarity';
 import DurationInput from './Duration';
 import ThemeInput from './Theme';
+import Num_members from './NumberOfUsers';
+import Experience from './Experience';
 
 function App() {
   const[languageFamiliarity, setLanguageFamiliarity] = useState('');
@@ -59,7 +61,13 @@ function App() {
       </div>
       <div className="Lang-familiarity">
       <ThemeInput childToParent={childToParent6}/>
+      <div className='Num-Users'>
+      <Num_members/>
       </div>
+      <div className='Num-Users'>
+      <Experience/>
+      </div>
+    </div>
     </div>
   );
   }
