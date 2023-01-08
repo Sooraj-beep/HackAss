@@ -79,21 +79,25 @@ function App() {
   const [showSpinner, setShowSpinner] = React.useState(false);
 
   const renderResponse = async(prompt) => {
-    const res = await v(prompt);
-  
-    setResponse(res);
-    const re = /(\d+\.)/
-    const tempStrings = res.split(re);
-    let resStrings = []
-    for(let i = 0; i <tempStrings.length; i++){
-      if(i%2 === 0) {
-        resStrings.push(tempStrings[i]);
+    v(prompt).then((res) => {
+      setResponse(res);
+      const re = /(\d+\.)/
+      const tempStrings = res.split(re);
+      let resStrings = []
+      for(let i = 0; i <tempStrings.length; i++){
+        if(i%2 === 0) {
+          resStrings.push(tempStrings[i]);
+        }
       }
-    }
-    console.log(resStrings);
-    setFiltered(resStrings.filter(element => element[0] !== '\n' && element !== ''));
-    console.log(filtered);
-    console.log("Here is the response from the API:  " + res);
+      console.log(resStrings);
+      setFiltered(resStrings.filter(element => element[0] !== '\n' && element !== ''));
+      console.log(filtered);
+      console.log("Here is the response from the API:  " + res);
+      setShowSpinner(false);
+    })
+    setShowSpinner(true);
+  
+   
   }
 
   // renderResponse();
