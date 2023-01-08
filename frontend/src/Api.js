@@ -17,7 +17,7 @@ export const v = async () => {
     prompt:
       "I have 2 members in my team. The programming languages I am most familiar with are: Java, C++. I have beginner years of experience with programming. Give me 4 project ideas for a 48hr hackathon",
     temperature: 0.5,
-    max_tokens: 2000,
+    max_tokens: 100,
     top_p: 1.0,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
