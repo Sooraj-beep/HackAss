@@ -7,13 +7,13 @@ export const v = async (prompt) => {
   const { Configuration, OpenAIApi } = require("openai");
 
   const configuration = new Configuration({
-    apiKey: '',
+    apiKey: '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',
   });
   console.log("Here is the response from the API:");
   const openai = new OpenAIApi(configuration);
 
   const response = await openai.createCompletion({
-    model: "text-curie-001",
+    model: "text-davinci-003",
     prompt: prompt,
     temperature: 0.5,
     max_tokens: 100,
