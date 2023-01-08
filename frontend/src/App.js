@@ -5,6 +5,7 @@ import Header from './Header';
 import Num_members from './NumberOfUsers';
 import Experience from './Experience';
 import NumberOfIdeas from './NumberOfIdeas';
+import {GeneratePrompt} from './helper/GeneratePrompt';
 
 function App() {
   const [experience, setExperience] = React.useState('');
@@ -28,6 +29,16 @@ function App() {
     console.log(numUsers);
   };
 
+  const param = {
+    totalPeople: 2,
+    languages: "Java, C++",
+    experience: "2-4",
+    totalIdeas: 4,
+    duration: "48hr",
+    theme: "webapp"
+  }
+  //GeneratePrompt(param);
+  
   return (
     <div className="App">
       <header className="App-header">
