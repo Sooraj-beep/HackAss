@@ -16,7 +16,7 @@ export const v = async (prompt) => {
     model: "text-davinci-003",
     prompt: prompt,
     temperature: 0.5,
-    max_tokens: 100,
+    max_tokens: 1000,
     top_p: 1.0,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,

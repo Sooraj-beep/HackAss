@@ -60,6 +60,7 @@ export default function DynamicList(list2, {childToParent}) {
     const handleClose = (event, index) => {
       setOpen(false);
       setIsDialogOpen(false);
+      setTechResources("")
 
 
     };
