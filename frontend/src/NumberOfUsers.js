@@ -24,9 +24,9 @@ export default function Num_members({childToParent}) {
           label="numUsers"
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
           <MenuItem value={3}>3</MenuItem>

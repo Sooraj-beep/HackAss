@@ -23,20 +23,27 @@ export default function LanguageFamiliarityInput({childToParent}) {
     }
     
     return (
-        <Paper
-        sx={{
-          display: 'inline-flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          listStyle: 'none',
-          p: 0.5,
-          m: 0,
-          width: 'auto'
+    //     <Paper
+    //     sx={{
+    //       display: 'flex',
+    //       justifyContent: 'center',
+    //       flexWrap: 'wrap',
+    //       listStyle: 'none',
+    //       p: 0.5,
+    //       m: 0,
+    //       width: 'auto'
+    //     }}
+    //     component="ul"
+    //     aria-readonly="false"
+    //   >
+
+        <MuiChipsInput 
+        sx= {{
+            width: 500
         }}
-        component="ul"
-        aria-readonly="false"
-      >
-        <MuiChipsInput value={chips} onChange={handleChange} />
-      </Paper>
+        label="Enter language and press enter"
+        fullWidth='true'
+        value={chips} onChange={handleChange} />
+      //</Paper>
     );
     }

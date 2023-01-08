@@ -23,7 +23,7 @@ export default function ThemeInput({childToParent}) {
         <form onSubmit={handleSubmit}>
         <TextField
             id="outlined-basic"
-            label="Theme"
+            label="Theme (ex: webapp)"
             variant="outlined"
             value={theme}
             onChange={handleChange}

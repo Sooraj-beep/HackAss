@@ -60,7 +60,7 @@ function App() {
       totalPeople: numUsers,
       languages: languageFamiliarity,
       experience: experience,
-      totalIdeas: numIdeas,
+      totalIdeas: numIdeas==='' ? 4: numIdeas,
       duration: duration,
       theme: theme
     }
@@ -85,14 +85,8 @@ function App() {
 
   // renderResponse();
   const[filtered, setFiltered] = useState([]);
-  const param = {
-    totalPeople: 2,
-    languages: "Java, C++",
-    experience: "2-4",
-    totalIdeas: 4,
-    duration: "48hr",
-    theme: "webapp"
-  }
+ 
+
   //GeneratePrompt(param);
 
   return (
