@@ -92,10 +92,14 @@ function App() {
       <div className='Num-Users'>
       <NumberOfIdeas childToParent = {childToParent2}/>
       </div>
+
+      <p> THIS IS THE RESPONSE</p>
+      <p>{response}</p>
     </div>
     </div>
   );
   }
+
 
 
 
