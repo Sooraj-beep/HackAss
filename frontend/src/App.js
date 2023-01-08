@@ -9,6 +9,7 @@ import DurationInput from './Duration';
 import ThemeInput from './Theme';
 import Num_members from './NumberOfUsers';
 import Experience from './Experience';
+import NumberOfIdeas from './NumberOfIdeas';
 
 function App() {
   const[languageFamiliarity, setLanguageFamiliarity] = useState('');
@@ -66,6 +67,9 @@ function App() {
       </div>
       <div className='Num-Users'>
       <Experience/>
+      </div>
+      <div className='Num-Users'>
+      <NumberOfIdeas/>
       </div>
     </div>
     </div>
