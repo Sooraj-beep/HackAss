@@ -11,8 +11,6 @@ export default function Experience({childToParent}) {
   const handleChange = (event) => {
     setExperience(event.target.value);
     childToParent(event.target.value);
-    console.log("haha");
-
   };
 
   return (

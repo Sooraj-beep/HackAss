@@ -5,11 +5,12 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function Num_members() {
+export default function Num_members({childToParent}) {
   const [numUsers, setnumUsers] = React.useState('');
 
   const handleChange = (event) => {
     setnumUsers(event.target.value);
+    childToParent(event.target.value);
   };
 
   return (
