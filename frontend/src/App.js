@@ -13,6 +13,8 @@ import LanguageFamiliarityInput from './LanguageFamiliarity';
 import DurationInput from './Duration';
 import ThemeInput from './Theme';
 import Button from '@mui/material/Button';
+import DynamicList from './DynamicList';
+
 
 function App() {
   const [experience, setExperience] = React.useState('');
@@ -74,12 +76,15 @@ function App() {
     const res = await v(prompt);
   
     setResponse(res);
-  
+    const resStrings = res.split(".");
+    console.log(resStrings);
+    setFiltered(resStrings.filter(element => element[0] !== '\n' && element !== ''));
+    console.log(filtered);
     console.log("Here is the response from the API:  " + res);
   }
 
   // renderResponse();
-
+  const[filtered, setFiltered] = useState([]);
   const param = {
     totalPeople: 2,
     languages: "Java, C++",
@@ -116,6 +121,9 @@ function App() {
       <Button variant="contained" onClick={Generate}>Generate Ideas</Button>
       <p> THIS IS THE RESPONSE</p>
       <p>{response}</p>
+      <div className='Dynamic-List'>
+      <DynamicList list2 = {filtered}/>
+      </div>
     </div>
   );
   }

@@ -13,7 +13,7 @@ export const v = async (prompt) => {
   const openai = new OpenAIApi(configuration);
 
   const response = await openai.createCompletion({
-    model: "text-curie-001",
+    model: "text-davinci-003",
     prompt: prompt,
     temperature: 0.5,
     max_tokens: 100,
