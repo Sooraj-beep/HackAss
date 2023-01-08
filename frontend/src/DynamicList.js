@@ -41,16 +41,17 @@ export default function DynamicList(list2, {childToParent}) {
       setSelectedValue(list2.list2[index]);
       setSelectedIndex(index);
       list2.childToParent(index);
-      setOpen(true);
-    };
-
-    const handleClose = (event) => {
-      setOpen(false);
-
       const prompt = generatePromptTechincalResources(list2.list2[index]);
       console.log(prompt);
   
       renderResponse(prompt);
+      setOpen(true);
+    };
+
+    const handleClose = (event, index) => {
+      setOpen(false);
+
+      
 
 
     };
@@ -88,9 +89,8 @@ export default function DynamicList(list2, {childToParent}) {
         onClick={(event) => handleListItemClick(event, i)}
         sx = {{textAlign: 'center'}}
         >
-        <PopupDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
-        <ListItemText primary = {item} />
-        {selectedIndex === i?<ListItemText primary = {item} secondary={techResources}/>: <ListItemText primary = {item}/>}
+        <PopupDialog selectedValue={techResources} open={open} onClose={handleClose} />
+        {selectedIndex === i?<ListItemText primary = {item}/>: <ListItemText primary = {item}/>}
 
       </ListItemButton>)}
         </List>
