@@ -23,7 +23,7 @@ export default function DurationInput({childToParent}) {
         <form onSubmit={handleSubmit}>
         <TextField
             id="outlined-basic"
-            label="Duration"
+            label="Duration (ex: 24hr)"
             variant="outlined"
             value={duration}
             onChange={handleChange}
