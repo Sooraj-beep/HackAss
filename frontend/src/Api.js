@@ -5,9 +5,9 @@ export function test() {
 
 export const v = async (prompt) => {
   const { Configuration, OpenAIApi } = require("openai");
-
+  console.log("this is api key: " +  process.env.REACT_APP_API_KEY)
   const configuration = new Configuration({
-    apiKey: '',
+    apiKey: process.env.REACT_APP_API_KEY,
   });
   console.log("Here is the response from the API:");
   const openai = new OpenAIApi(configuration);
