@@ -3,34 +3,21 @@ import './App.css';
 import { v, test } from './Api';
 import React from 'react';
 import Header from './Header';
+import { useState } from 'react';
 import LanguageFamiliarityInput from './LanguageFamiliarity';
 import DurationInput from './Duration';
 import ThemeInput from './Theme';
 
+function App() {
+  const[languageFamiliarity, setLanguageFamiliarity] = useState('');
+  const[duration, setDuration] = useState('');
+  const[theme, setTheme] = useState('');
 
-
-
-class App extends React.Component {
-
-  constructor(props) {
-    super(props);    this.state = {response: "HELLO"};
+  const childToParent = (event) => {
+    setLanguageFamiliarity(event);
+    setDuration(event);
+    setTheme(event);
   }
-
-  componentDidMount() {
-    this.renderResponse();
-  }
-
-  renderResponse = async() => {
-    const res = await v();
-  
-    this.setState({response: res});
-  
-    console.log("Here is the response from the API:  " + res);
-  }
-
-  render() {
-
-  
   return (
     <div className="App">
       <header className="App-header">
@@ -66,7 +53,7 @@ class App extends React.Component {
     </div>
   );
   }
-}
+
 
 
 export default App;

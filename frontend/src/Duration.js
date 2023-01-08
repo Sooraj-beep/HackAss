@@ -5,12 +5,13 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 //import { useHistory } from 'react-router-dom';
 
-export default function DurationInput() {
+export default function DurationInput({childToParent}) {
     const [duration, setDuration] = useState('');
     //const history = useHistory();
     
     const handleChange = (event) => {
         setDuration(event.target.value);
+        childToParent(event.target.value);
     };
     
     const handleSubmit = (event) => {
