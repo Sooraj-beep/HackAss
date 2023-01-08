@@ -55,6 +55,12 @@ function App() {
     console.log(theme);
   }
 
+  const[selectedIndex, setSelectedIndex] = useState('');
+  const childToParent7 = (event) => {
+    setSelectedIndex(event);
+    console.log(selectedIndex);
+  }
+  
   function Generate(){
     const param = {
       totalPeople: numUsers,
@@ -110,13 +116,13 @@ function App() {
       <Experience childToParent = {childToParent}/>
       </div>
       <div className='Num-Users'>
-      <NumberOfIdeas childToParent = {childToParent2}/>
+      <NumberOfIdeas childToParent = {childToParent2} />
       </div>
       <Button variant="contained" onClick={Generate}>Generate Ideas</Button>
       <p> THIS IS THE RESPONSE</p>
       <p>{response}</p>
       <div className='Dynamic-List'>
-      <DynamicList list2 = {filtered}/>
+      <DynamicList list2 = {filtered} childToParent = {childToParent7}/>
       </div>
     </div>
   );

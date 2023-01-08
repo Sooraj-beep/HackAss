@@ -4,11 +4,12 @@ import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
-export default function DynamicList(list2) {
+export default function DynamicList(list2, {childToParent}) {
     console.log(list2);
     const [selectedIndex, setSelectedIndex] = React.useState();
     const handleListItemClick = (event, index) => {
       setSelectedIndex(index);
+      list2.childToParent(index);
     };
     //const list2 = ["ash","vyome","grab"]; 
     return (
