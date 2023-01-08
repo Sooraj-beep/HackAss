@@ -96,10 +96,8 @@ function App() {
       <p> THIS IS THE RESPONSE</p>
       <p>{response}</p>
     </div>
-    </div>
   );
   }
-
 
 
 
