@@ -5,11 +5,12 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function NumberOfIdeas() {
+export default function NumberOfIdeas({childToParent}) {
   const [numIdeas, setnumIdeas] = React.useState('');
 
   const handleChange = (event) => {
     setnumIdeas(event.target.value);
+    childToParent(event.target.value);
   };
 
   return (
