@@ -64,18 +64,21 @@ function App() {
     }
     const prompt = GeneratePrompt(param);
     console.log(prompt);
+
+    renderResponse(prompt);
+
   }
   const [response, setResponse] = React.useState('');
 
-  const renderResponse = async() => {
-    const res = await v();
+  const renderResponse = async(prompt) => {
+    const res = await v(prompt);
   
     setResponse(res);
   
     console.log("Here is the response from the API:  " + res);
   }
 
-  renderResponse();
+  // renderResponse();
 
   const param = {
     totalPeople: 2,

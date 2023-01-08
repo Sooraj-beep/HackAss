@@ -3,7 +3,7 @@ export function test() {
   return "hi from this test funtion";
 }
 
-export const v = async () => {
+export const v = async (prompt) => {
   const { Configuration, OpenAIApi } = require("openai");
 
   const configuration = new Configuration({
@@ -13,9 +13,8 @@ export const v = async () => {
   const openai = new OpenAIApi(configuration);
 
   const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt:
-      "I have 2 members in my team. The programming languages I am most familiar with are: Java, C++. I have beginner years of experience with programming. Give me 4 project ideas for a 48hr hackathon",
+    model: "text-curie-001",
+    prompt: prompt,
     temperature: 0.5,
     max_tokens: 100,
     top_p: 1.0,
