@@ -76,7 +76,8 @@ function App() {
     const res = await v(prompt);
   
     setResponse(res);
-    const resStrings = res.split(".");
+    const re = /\d./
+    const resStrings = res.split(re);
     console.log(resStrings);
     setFiltered(resStrings.filter(element => element[0] !== '\n' && element !== ''));
     console.log(filtered);
