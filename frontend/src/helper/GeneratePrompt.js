@@ -27,3 +27,12 @@ export const GeneratePrompt = (params) =>{
     return prompt;
 
 }
+
+
+export const generatePromptTechincalResources = (params) => {
+
+    let prompt = "List some technical resources to help me make my project: " + params;
+
+    return prompt;
+
+}

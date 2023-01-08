@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import List from '@mui/material/List';
@@ -6,6 +7,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
+import {v} from './Api';
+import { generatePromptTechincalResources } from './helper/GeneratePrompt';
 //show the list of resources in a dialog popup
 function PopupDialog(props){
     const {onClose, selectedValue, open } = props;
@@ -43,7 +46,38 @@ export default function DynamicList(list2, {childToParent}) {
 
     const handleClose = (event) => {
       setOpen(false);
+
+      const prompt = generatePromptTechincalResources(list2.list2[index]);
+      console.log(prompt);
+  
+      renderResponse(prompt);
+
+
     };
+
+    const[techResources, setTechResources] = useState([]);
+
+    const renderResponse = async(prompt) => {
+      const res = await v(prompt);
+    
+      setTechResources(res);
+    
+      console.log("Here is the response from the API:  " + res);
+  
+      
+  
+    }
+
+    function Generate2(param){
+
+      const prompt = generatePromptTechincalResources(param);
+      console.log(prompt);
+  
+      renderResponse(prompt);
+  
+  
+  
+    }
     //const list2 = ["ash","vyome","grab"]; 
     return (
       <Box sx={{bgcolor: 'background.paper' }}>
@@ -56,6 +90,8 @@ export default function DynamicList(list2, {childToParent}) {
         >
         <PopupDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
         <ListItemText primary = {item} />
+        {selectedIndex === i?<ListItemText primary = {item} secondary={techResources}/>: <ListItemText primary = {item}/>}
+
       </ListItemButton>)}
         </List>
       </Box>
