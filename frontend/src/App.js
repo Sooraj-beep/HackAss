@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
 import { v, test } from './Api';
 import React from 'react';
@@ -31,6 +32,12 @@ function App() {
     console.log(theme);
   }
 
+  const [experience, setExperience] = React.useState('');
+
+  const handleChange = (event) => {
+    console.log("haha");
+    setExperience(event.target.value);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -66,7 +73,7 @@ function App() {
       <Num_members/>
       </div>
       <div className='Num-Users'>
-      <Experience/>
+      <Experience onChange = {handleChange}/>
       </div>
       <div className='Num-Users'>
       <NumberOfIdeas/>
