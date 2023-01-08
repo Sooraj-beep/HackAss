@@ -82,6 +82,7 @@ function App() {
       </div>
       <div className="Lang-familiarity">
       <ThemeInput childToParent={childToParent6}/>
+      </div>
       <div className='Num-Users'>
       <Num_members childToParent = {childToParent3}/>
       </div>
