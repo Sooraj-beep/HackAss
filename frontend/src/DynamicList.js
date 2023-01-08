@@ -37,21 +37,24 @@ export default function DynamicList(list2, {childToParent}) {
     const [open, setOpen] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = React.useState('');
     const [selectedValue, setSelectedValue] = React.useState('');
+    const [isDialogOpen, setIsDialogOpen] = React.useState(false);
     const handleListItemClick = (event, index) => {
-      setSelectedValue(list2.list2[index]);
-      setSelectedIndex(index);
-      list2.childToParent(index);
-      const prompt = generatePromptTechincalResources(list2.list2[index]);
-      console.log(prompt);
-  
-      renderResponse(prompt);
-      setOpen(true);
+      if( isDialogOpen === false ){
+        setIsDialogOpen(true)
+        setSelectedValue(list2.list2[index]);
+        setSelectedIndex(index);
+        list2.childToParent(index);
+        const prompt = generatePromptTechincalResources(list2.list2[index]);
+        console.log(prompt);
+    
+        renderResponse(prompt);
+        setOpen(true);
+      }
     };
 
     const handleClose = (event, index) => {
       setOpen(false);
-
-      
+      setIsDialogOpen(false);
 
 
     };
