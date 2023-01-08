@@ -58,7 +58,7 @@ function App() {
   const[selectedIndex, setSelectedIndex] = useState('');
   const childToParent7 = (event) => {
     setSelectedIndex(event);
-    console.log(selectedIndex);
+    console.log(event);
   }
   
   function Generate(){
