@@ -1,33 +1,42 @@
 // component to make a text box for the user to enter their name
 
 import React from 'react';
-import TextField from '@mui/material/TextField';
+import { styled } from '@mui/material/styles';
+import Chip from '@mui/material/Chip';
+import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import TagFacesIcon from '@mui/icons-material/TagFaces';
+import { MuiChipsInput } from 'mui-chips-input';
 //import { useHistory } from 'react-router-dom';
 
+const ListItem = styled('li')(({ theme }) => ({
+    margin: theme.spacing(0.5),
+  }));
+
 export default function LanguageFamiliarityInput({childToParent}) {
-    const [familiarity, setFamiliarity] = useState('');
-    //const history = useHistory();
-    
-    const handleChange = (event) => {
-        setFamiliarity(event.target.value);
-        childToParent(event.target.value);
-    };
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-       // history.push('/language-familiarity');
-    };
+    const [chips, setChips] = React.useState([])
+
+    const handleChange = (newChips) => {
+        console.log("this is chips: " + chips)
+      setChips(newChips)
+      childToParent(newChips.join(", "))
+    }
     
     return (
-        <form onSubmit={handleSubmit}>
-        <TextField
-            id="outlined-basic"
-            label="Language Familiarity"
-            variant="outlined"
-            value={familiarity}
-            onChange={handleChange}
-        />
-        </form>
+        <Paper
+        sx={{
+          display: 'inline-flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          listStyle: 'none',
+          p: 0.5,
+          m: 0,
+          width: 'auto'
+        }}
+        component="ul"
+        aria-readonly="false"
+      >
+        <MuiChipsInput value={chips} onChange={handleChange} />
+      </Paper>
     );
     }
