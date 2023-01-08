@@ -12,6 +12,7 @@ import { useState } from 'react';
 import LanguageFamiliarityInput from './LanguageFamiliarity';
 import DurationInput from './Duration';
 import ThemeInput from './Theme';
+import Button from '@mui/material/Button';
 
 function App() {
   const [experience, setExperience] = React.useState('');
@@ -52,6 +53,18 @@ function App() {
     console.log(theme);
   }
 
+  function Generate(){
+    const param = {
+      totalPeople: numUsers,
+      languages: languageFamiliarity,
+      experience: experience,
+      totalIdeas: numIdeas,
+      duration: duration,
+      theme: theme
+    }
+    const prompt = GeneratePrompt(param);
+    console.log(prompt);
+  }
   const [response, setResponse] = React.useState('');
 
   const renderResponse = async() => {
@@ -97,10 +110,9 @@ function App() {
       <div className='Num-Users'>
       <NumberOfIdeas childToParent = {childToParent2}/>
       </div>
-
+      <Button variant="contained" onClick={Generate}>Generate Ideas</Button>
       <p> THIS IS THE RESPONSE</p>
       <p>{response}</p>
-
     </div>
   );
   }
