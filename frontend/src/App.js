@@ -10,6 +10,7 @@ import { useState } from 'react';
 import LanguageFamiliarityInput from './LanguageFamiliarity';
 import DurationInput from './Duration';
 import ThemeInput from './Theme';
+import Button from '@mui/material/Button';
 
 function App() {
   const [experience, setExperience] = React.useState('');
@@ -82,6 +83,7 @@ function App() {
       <div className='Num-Users'>
       <NumberOfIdeas childToParent = {childToParent2}/>
       </div>
+      <Button variant="contained">Generate Ideas</Button>
     </div>
   );
 }
