@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage": "https://github.com/orgs/Pizza-or-Bust/pizza-or-bust.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -24,6 +25,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "env-cmd -f ./src/.env react-scripts start",
     "build": "env-cmd -f ./src/.env react-scripts build",
     "test": "react-scripts test",
