@@ -82,8 +82,14 @@ function App() {
     const res = await v(prompt);
   
     setResponse(res);
-    const re = /\d./
-    const resStrings = res.split(re);
+    const re = /(\d+\.)/
+    const tempStrings = res.split(re);
+    let resStrings = []
+    for(let i = 0; i <tempStrings.length; i++){
+      if(i%2 === 0) {
+        resStrings.push(tempStrings[i]);
+      }
+    }
     console.log(resStrings);
     setFiltered(resStrings.filter(element => element[0] !== '\n' && element !== ''));
     console.log(filtered);
