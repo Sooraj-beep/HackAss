@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import * as React from 'react';
 import './App.css';
+
+import { v, test } from './Api';
 import Header from './Header';
 import Num_members from './NumberOfUsers';
 import Experience from './Experience';
@@ -63,6 +65,28 @@ function App() {
     const prompt = GeneratePrompt(param);
     console.log(prompt);
   }
+  const [response, setResponse] = React.useState('');
+
+  const renderResponse = async() => {
+    const res = await v();
+  
+    setResponse(res);
+  
+    console.log("Here is the response from the API:  " + res);
+  }
+
+  renderResponse();
+
+  const param = {
+    totalPeople: 2,
+    languages: "Java, C++",
+    experience: "2-4",
+    totalIdeas: 4,
+    duration: "48hr",
+    theme: "webapp"
+  }
+  //GeneratePrompt(param);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -87,8 +111,12 @@ function App() {
       <NumberOfIdeas childToParent = {childToParent2}/>
       </div>
       <Button variant="contained" onClick={Generate}>Generate Ideas</Button>
+      <p> THIS IS THE RESPONSE</p>
+      <p>{response}</p>
     </div>
   );
-}
+  }
+
+
 
 export default App;
