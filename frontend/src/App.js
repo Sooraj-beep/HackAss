@@ -3,6 +3,9 @@ import './App.css';
 import { v, test } from './Api';
 import React from 'react';
 import Header from './Header';
+import LanguageFamiliarityInput from './LanguageFamiliarity';
+import DurationInput from './Duration';
+import ThemeInput from './Theme';
 
 
 
@@ -51,6 +54,15 @@ class App extends React.Component {
         </a>
       <Header/>
       </header>
+      <div className="Lang-familiarity">
+      <LanguageFamiliarityInput/>
+      </div>
+      <div className="Duration">
+      <DurationInput/>
+      </div>
+      <div className="Theme">
+      <ThemeInput/>
+      </div>
     </div>
   );
   }
