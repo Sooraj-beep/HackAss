@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { v, test } from './Api';
 import React from 'react';
+import Header from './Header';
 
 
 
@@ -48,6 +49,7 @@ class App extends React.Component {
         >
           Learn React
         </a>
+      <Header/>
       </header>
     </div>
   );
