@@ -9,9 +9,9 @@ import NumberOfIdeas from './NumberOfIdeas';
 function App() {
   const [experience, setExperience] = React.useState('');
 
-  const handleChange = (event) => {
-    console.log("haha");
-    setExperience(event.target.value);
+  const childToParent = (event) => {
+    setExperience(event);
+    console.log(experience);
   };
   return (
     <div className="App">
@@ -22,7 +22,7 @@ function App() {
       <Num_members/>
       </div>
       <div className='Num-Users'>
-      <Experience onChange = {handleChange}/>
+      <Experience childToParent = {childToParent}/>
       </div>
       <div className='Num-Users'>
       <NumberOfIdeas/>

@@ -5,11 +5,12 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function Experience() {
+export default function Experience({childToParent}) {
   const [experience, setExperience] = React.useState('');
 
   const handleChange = (event) => {
     setExperience(event.target.value);
+    childToParent(event.target.value);
     console.log("haha");
 
   };
@@ -28,8 +29,8 @@ export default function Experience() {
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={"1"}>0-1</MenuItem>
-          <MenuItem value={"2"}>1-2</MenuItem>
+          <MenuItem value={"0-1"}>0-1</MenuItem>
+          <MenuItem value={"1-2"}>1-2</MenuItem>
           <MenuItem value={"3+"}>3+</MenuItem>
         </Select>
         <FormHelperText>years of coding experience</FormHelperText>
