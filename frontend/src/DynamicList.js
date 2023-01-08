@@ -9,6 +9,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import {v} from './Api';
 import { generatePromptTechincalResources } from './helper/GeneratePrompt';
+import linkifyStr from "linkify-string";
+import Linkify from 'linkify-react';
+import Typography from '@mui/material/Typography';
+
 //show the list of resources in a dialog popup
 function PopupDialog(props){
     const {onClose, selectedValue, open } = props;
@@ -59,7 +63,7 @@ export default function DynamicList(list2, {childToParent}) {
 
     };
 
-    const[techResources, setTechResources] = useState([]);
+    const[techResources, setTechResources] = useState('');
 
     const renderResponse = async(prompt) => {
       const res = await v(prompt);
@@ -92,7 +96,12 @@ export default function DynamicList(list2, {childToParent}) {
         onClick={(event) => handleListItemClick(event, i)}
         sx = {{textAlign: 'center'}}
         >
-        <PopupDialog selectedValue={techResources} open={open} onClose={handleClose} />
+        <PopupDialog selectedValue={<Linkify>{<Typography
+  variant="body1"
+  style={{whiteSpace: 'pre-line'}}
+>
+  {techResources}
+</Typography>}</Linkify>} open={open} onClose={handleClose} />
         {selectedIndex === i?<ListItemText primary = {item}/>: <ListItemText primary = {item}/>}
 
       </ListItemButton>)}
