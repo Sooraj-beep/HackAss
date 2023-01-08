@@ -12,8 +12,9 @@ export default function Header() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
+            {/*make hack and ass and display hackethon Assistant bold and bigger in typography*/}
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Hackathon Assistant
+            <Box component="span" fontWeight='bold' color='orange'>Hack</Box>athon <Box component="span" fontWeight='bold' color='orange'>Ass</Box>istant
             </Typography>
           </Toolbar>
         </AppBar>

@@ -6,6 +6,10 @@ import Num_members from './NumberOfUsers';
 import Experience from './Experience';
 import NumberOfIdeas from './NumberOfIdeas';
 import {GeneratePrompt} from './helper/GeneratePrompt';
+import { useState } from 'react';
+import LanguageFamiliarityInput from './LanguageFamiliarity';
+import DurationInput from './Duration';
+import ThemeInput from './Theme';
 
 function App() {
   const [experience, setExperience] = React.useState('');
@@ -26,6 +30,25 @@ function App() {
     setnumUsers(event);    
     console.log(numUsers);
   };
+  
+  const[languageFamiliarity, setLanguageFamiliarity] = useState('');
+  const[duration, setDuration] = useState('');
+  const[theme, setTheme] = useState('');
+
+  const childToParent4 = (event) => {
+    setLanguageFamiliarity(event);
+    console.log(languageFamiliarity);
+  }
+
+  const childToParent5 = (event) => {
+    setDuration(event);
+    console.log(duration);
+  }
+
+  const childToParent6 = (event) => {
+    setTheme(event);
+    console.log(theme);
+  }
 
   const param = {
     totalPeople: 2,
@@ -36,12 +59,19 @@ function App() {
     theme: "webapp"
   }
   //GeneratePrompt(param);
-  
   return (
     <div className="App">
       <header className="App-header">
       <Header/>
       </header>
+      <div className="Lang-familiarity">
+      <LanguageFamiliarityInput childToParent={childToParent4}/>
+      </div>
+      <div className="Lang-familiarity">
+      <DurationInput childToParent={childToParent5}/>
+      </div>
+      <div className="Lang-familiarity">
+      <ThemeInput childToParent={childToParent6}/>
       <div className='Num-Users'>
       <Num_members childToParent = {childToParent3}/>
       </div>
