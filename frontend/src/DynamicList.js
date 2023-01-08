@@ -21,7 +21,7 @@ function PopupDialog(props){
       );
 }
 
-export default function DynamicList(list2) {
+export default function DynamicList(list2, {childToParent}) {
     console.log(list2);
     const [open, setOpen] = React.useState(false);
     const [selectedIndex, setSelectedIndex] = React.useState('');
@@ -32,6 +32,7 @@ export default function DynamicList(list2) {
 
     const handleClose = (event) => {
       setOpen(false);
+      list2.childToParent(index);
     };
     //const list2 = ["ash","vyome","grab"]; 
     return (
