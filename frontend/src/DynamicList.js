@@ -19,6 +19,7 @@ function PopupDialog(props){
       return (
         <Dialog onClose={handleClose} open={open}>
           <DialogTitle>Resources</DialogTitle>
+          
           <List sx={{ pt: 0 }}>
             <ListItemText primary = {selectedValue} />
           </List>
