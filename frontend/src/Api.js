@@ -7,7 +7,7 @@ export const v = async (prompt) => {
   const { Configuration, OpenAIApi } = require("openai");
 
   const configuration = new Configuration({
-    apiKey: '',
+    apiKey: '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',
   });
   console.log("Here is the response from the API:");
   const openai = new OpenAIApi(configuration);
