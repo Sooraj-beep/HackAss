@@ -23,6 +23,7 @@ export const GeneratePrompt = (params) =>{
         prompt = prompt + " with the theme " + params.theme;
     }
 
-    console.log(prompt);
+    //console.log(prompt);
+    return prompt;
 
 }

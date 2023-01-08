@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import * as React from 'react';
 import './App.css';
+
+import { v, test } from './Api';
 import Header from './Header';
 import Num_members from './NumberOfUsers';
 import Experience from './Experience';
@@ -10,6 +12,7 @@ import { useState } from 'react';
 import LanguageFamiliarityInput from './LanguageFamiliarity';
 import DurationInput from './Duration';
 import ThemeInput from './Theme';
+import Button from '@mui/material/Button';
 
 function App() {
   const [experience, setExperience] = React.useState('');
@@ -50,6 +53,33 @@ function App() {
     console.log(theme);
   }
 
+  function Generate(){
+    const param = {
+      totalPeople: numUsers,
+      languages: languageFamiliarity,
+      experience: experience,
+      totalIdeas: numIdeas,
+      duration: duration,
+      theme: theme
+    }
+    const prompt = GeneratePrompt(param);
+    console.log(prompt);
+
+    renderResponse(prompt);
+
+  }
+  const [response, setResponse] = React.useState('');
+
+  const renderResponse = async(prompt) => {
+    const res = await v(prompt);
+  
+    setResponse(res);
+  
+    console.log("Here is the response from the API:  " + res);
+  }
+
+  // renderResponse();
+
   const param = {
     totalPeople: 2,
     languages: "Java, C++",
@@ -59,6 +89,7 @@ function App() {
     theme: "webapp"
   }
   //GeneratePrompt(param);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -72,6 +103,7 @@ function App() {
       </div>
       <div className="Lang-familiarity">
       <ThemeInput childToParent={childToParent6}/>
+      </div>
       <div className='Num-Users'>
       <Num_members childToParent = {childToParent3}/>
       </div>
@@ -81,8 +113,13 @@ function App() {
       <div className='Num-Users'>
       <NumberOfIdeas childToParent = {childToParent2}/>
       </div>
+      <Button variant="contained" onClick={Generate}>Generate Ideas</Button>
+      <p> THIS IS THE RESPONSE</p>
+      <p>{response}</p>
     </div>
   );
-}
+  }
+
+
 
 export default App;
