@@ -10,6 +10,8 @@ export default function Experience() {
 
   const handleChange = (event) => {
     setExperience(event.target.value);
+    console.log("haha");
+
   };
 
   return (
