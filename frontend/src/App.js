@@ -92,7 +92,6 @@ function App() {
       console.log(resStrings);
       setFiltered(resStrings.filter(element => element[0] !== '\n' && element !== ''));
       console.log(filtered);
-      console.log("Here is the response from the API:  " + res);
       setShowSpinner(false);
     })
     setShowSpinner(true);
