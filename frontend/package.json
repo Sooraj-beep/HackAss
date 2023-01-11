@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://github.com/orgs/Pizza-or-Bust/pizza-or-bust.github.io",
+  "homepage": "https://sooraj-beep.github.io/HackAss",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
