@@ -21,10 +21,6 @@ export const v = async (prompt) => {
     frequency_penalty: 0.0,
     presence_penalty: 0.0,
   });
-
-  
-  console.log(" HI " + response.data.choices[0].text);
-
   return response.data.choices[0].text
 };
 
