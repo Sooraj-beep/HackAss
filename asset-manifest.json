@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/HackAss/static/css/main.cf2b5993.css",
+    "main.js": "/HackAss/static/js/main.76ca0338.js",
+    "static/js/787.cda612ba.chunk.js": "/HackAss/static/js/787.cda612ba.chunk.js",
+    "static/media/logo.svg": "/HackAss/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/HackAss/index.html",
+    "main.cf2b5993.css.map": "/HackAss/static/css/main.cf2b5993.css.map",
+    "main.76ca0338.js.map": "/HackAss/static/js/main.76ca0338.js.map",
+    "787.cda612ba.chunk.js.map": "/HackAss/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf2b5993.css",
+    "static/js/main.76ca0338.js"
+  ]
+}
