@@ -1,15 +1,8 @@
-export function test() {
-  console.log("hi from this test funtion");
-  return "hi from this test funtion";
-}
-
 export const v = async (prompt) => {
   const { Configuration, OpenAIApi } = require("openai");
-  console.log("this is api key: " +  process.env.REACT_APP_API_KEY)
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_API_KEY,
   });
-  console.log("Here is the response from the API:");
   const openai = new OpenAIApi(configuration);
 
   const response = await openai.createCompletion({
